@@ -38,12 +38,12 @@ async def posalji_podatke():
 
     try:
         await eywa.graphql("""
-        mutation($podatci:[MjerenjeInput]) {
-            syncMjerenjeList(data:$podatci) {
+        mutation($podaci:[MjerenjeInput]) {
+            syncMjerenjeList(data:$podaci) {
                 euuid
             }
         }
-        """, {"podatci": mjerenja})
+        """, {"podaci": mjerenja})
     except:
         pass
 
@@ -51,3 +51,4 @@ async def posalji_podatke():
 
 if __name__ == "__main__":
     asyncio.run(posalji_podatke())
+
